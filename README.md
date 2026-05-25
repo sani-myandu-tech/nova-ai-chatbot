@@ -159,7 +159,7 @@
 
 ```bash
 # Clone the repo
-git clone https://github.com/your-username/nova-chatbot.git
+git clone https://sani-mnyandu-tech/nova-ai-chatbot.git
 cd nova-chatbot
 
 # Install dependencies
@@ -285,4 +285,4 @@ npm test -- --coverage
 
 ## License
 
-MIT © 2024 Nova Chatbot Project
+MIT © 2024 Lungisani Mnyandu
