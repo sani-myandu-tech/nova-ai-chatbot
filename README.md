@@ -92,22 +92,22 @@
 
 ```
 ┌──────────────────────────────────────────────────────────┐
-│                     BROWSER (Frontend)                    │
-│                                                           │
-│   ┌─────────────┐   ┌──────────────┐   ┌─────────────┐  │
-│   │  Chat UI    │   │  Analytics   │   │ Session Mgmt│  │
-│   │  index.html │   │  Dashboard   │   │  (UUID)     │  │
-│   └──────┬──────┘   └──────┬───────┘   └──────┬──────┘  │
-│          └─────────────────┴──────────────────┘         │
+│                     BROWSER (Frontend)                   │
+│                                                          │
+│   ┌─────────────┐   ┌──────────────┐   ┌─────────────┐   │
+│   │  Chat UI    │   │  Analytics   │   │ Session Mgmt│   │
+│   │  index.html │   │  Dashboard   │   │  (UUID)     │   │
+│   └──────┬──────┘   └──────┬───────┘   └──────┬──────┘   │
+│          └─────────────────┴──────────────────┘          │
 │                     fetch() API calls                    │
 └──────────────────────────┬───────────────────────────────┘
                             │ HTTP/JSON
 ┌──────────────────────────▼───────────────────────────────┐
-│                  EXPRESS.JS BACKEND                       │
-│                                                           │
-│  ┌───────────┐  ┌───────────┐  ┌────────────────────┐   │
-│  │  Helmet   │→ │   CORS    │→ │  Rate Limiter      │   │
-│  └───────────┘  └───────────┘  │  (60 msg/min/IP)   │   │
+│                  EXPRESS.JS BACKEND                      │
+│                                                          │
+│  ┌───────────┐  ┌───────────┐  ┌────────────────────┐    │
+│  │  Helmet   │→ │   CORS    │→ │  Rate Limiter      │    │
+│  └───────────┘  └───────────┘  │  (60 msg/min/IP)   │    │
 │                                └──────────┬───────────┘   │
 │                                           │               │
 │  ┌────────────────────────────────────────▼─────────────┐ │
@@ -126,13 +126,13 @@
 │  ┌────────────────────────────────────────▼─────────────┐ │
 │  │              CHAT ENGINE (chatEngine.js)             │ │
 │  │                                                      │ │
-│  │  Input → normalize() → scoreEntry() → ranked list   │ │
+│  │  Input → normalize() → scoreEntry() → ranked list   │  │
 │  │                                                      │ │
-│  │  ┌──────────────────────────────────────────────┐   │ │
-│  │  │  KNOWLEDGE BASE (18 intent categories)       │   │ │
-│  │  │  greeting · farewell · identity · tech       │   │ │
-│  │  │  cloud · ai · security · fun · help · …      │   │ │
-│  │  └──────────────────────────────────────────────┘   │ │
+│  │  ┌──────────────────────────────────────────────┐   │  │
+│  │  │  KNOWLEDGE BASE (18 intent categories)       │   │  │
+│  │  │  greeting · farewell · identity · tech       │   │  │
+│  │  │  cloud · ai · security · fun · help · …      │   │  │
+│  │  └──────────────────────────────────────────────┘   │  │
 │  │                                                      │ │
 │  │  Best match → pickRandom(responses) → return         │ │
 │  │  No match   → pickRandom(fallbackResponses)          │ │
